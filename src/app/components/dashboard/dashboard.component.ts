@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ExitToApp } from '@material-ui/icons';
 
 @Component({
   selector: 'app-dashboard',
