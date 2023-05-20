@@ -1,0 +1,104 @@
+<body class="hold-transition sidebar-mini">
+  <div class="wrapper">
+    <!-- Navbar -->
+    <app-nav-bar></app-nav-bar>
+
+    <!-- /.navbar -->
+
+    <app-side-bar></app-side-bar>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0">Dashboard v2</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active">Dashboard v2</li>
+              </ol>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.content-header -->
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+          <!-- Info boxes -->
+
+          <!-- /.row -->
+
+
+          <!-- /.row -->
+
+          <!-- Main row -->
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card card-primary">
+                <div class="card-header">
+                  <h3 class="card-title">General</h3>
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                      <i class="fas fa-minus"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="card-body">
+                <form [formGroup]="updateForm" (ngSubmit)="onUpdate()">
+
+                  <div class="form-group">
+                    <label for="inputAge">Age</label>
+                    <input type="text" id="inputAge" class="form-control"  formControlName="Age">
+                  </div>
+                  <div class="form-group">
+                    <label for="inputSex">Sex</label>
+                    <input type="text" id="inputSex" class="form-control"  formControlName="Sex">
+                  </div>
+                  <div class="form-group">
+                    <label for="inputRestBloodPress">Rest Blood Pressure</label>
+                    <input type="text" id="inputRestBloodPress" class="form-control"  formControlName="RestBloodPress" >
+                  </div>
+                  <div class="form-group">
+                    <label for="inputCholesterol">Cholesterol</label>
+                    <input type="text" id="inputCholesterol" class="form-control"  formControlName="Cholesterol">
+                  </div>
+                  <div class="form-group">
+                    <label for="inputFastBloodSugar">Fast Blood Sugar</label>
+                    <input type="text" id="inputFastBloodSugar" class="form-control"  formControlName="FastBloodSugar">
+                  </div>
+                  <div class="form-group">
+                    <label for="inputRestElecardioRes">Rest Elecardio Res</label>
+                    <input type="text" id="inputRestElecardioRes" class="form-control"  formControlName="RestElecardioRes" >
+                  </div>
+                  <button type="submit" class="btn btn-block bg-gradient-primary">update</button>
+                </form>
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+            </div>
+          </div>
+
+          <!-- /.row -->
+        </div><!--/. container-fluid -->
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- Control Sidebar -->
+
+    <!-- /.control-sidebar -->
+
+
+  </div>
+  <!-- ./wrapper -->
+
+  </body>

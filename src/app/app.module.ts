@@ -13,7 +13,10 @@ import { MychartComponent } from './mychart/mychart.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { LogoutComponent } from './components/authentification/logout/logout.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-
+import { AddPatientComponent } from './components/Patient/add-patient/add-patient.component';
+import { ViewPatientComponent } from './components/Patient/view-patient/view-patient.component';
+import { EditPatientComponent } from './components/Patient/edit-patient/edit-patient.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -26,13 +29,17 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     MychartComponent,
     LogoutComponent,
     NavBarComponent,
+    AddPatientComponent,
+    ViewPatientComponent,
+    EditPatientComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
