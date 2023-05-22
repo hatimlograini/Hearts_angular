@@ -1,14 +1,15 @@
 import { Component, NgZone } from '@angular/core';
+
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PatientCrudService } from 'src/app/services/Patient/patient-crud.service';
+import { TestCrudService } from 'src/app/services/Test/test-crud.service';
 
 @Component({
-  selector: 'app-edit-patient',
-  templateUrl: './edit-patient.component.html',
-  styleUrls: ['./edit-patient.component.css']
+  selector: 'app-edit-test',
+  templateUrl: './edit-test.component.html',
+  styleUrls: ['./edit-test.component.css']
 })
-export class EditPatientComponent {
+export class EditTestComponent {
 
   getId:any;
   updateForm!: FormGroup;
@@ -17,29 +18,23 @@ export class EditPatientComponent {
     private router:Router,
     private NgZone:NgZone,
     private activatedRoute:ActivatedRoute,
-    private crudAPI:PatientCrudService){
+    private crudAPI:TestCrudService){
       this.getId = this.activatedRoute.snapshot.paramMap.get('id');
-      this.crudAPI.getpatient(this.getId).subscribe(res => {
-        console.log(res['patient_dim']);
-        const patientData = res['patient_dim'];
+      this.crudAPI.gettest(this.getId).subscribe(res => {
+        console.log(res);
+        const testData = res;
 
         this.updateForm.setValue({
-          Age: patientData['Age'],
-          Sex: patientData['Sex'],
-          RestBloodPress: patientData['RestBloodPress'],
-          Cholesterol: patientData['Cholesterol'],
-          FastBloodSugar: patientData['FastBloodSugar'],
-          RestElecardioRes: patientData['RestElecardioRes'],
+          MaxHeartRateAch: testData['MaxHeartRateAch'],
+          Oldpeak: testData['Oldpeak'],
+          Slope: testData['Slope']
         });
       });
 
       this.updateForm = this.formBuilder.group({
-        Age: [''],
-        Sex: [''],
-        RestBloodPress: [''],
-        Cholesterol: [''],
-        FastBloodSugar: [''],
-        RestElecardioRes:['']
+        MaxHeartRateAch: [''],
+        Oldpeak: [''],
+        Slope: ['']
       })
 
     }
@@ -50,7 +45,7 @@ export class EditPatientComponent {
   }
 
   onUpdate(){
-    this.crudAPI.updatepatient(this.getId,this.updateForm.value).subscribe(res=>{
+    this.crudAPI.updatetest(this.getId,this.updateForm.value).subscribe(res=>{
       console.log('');
       const alertMessage = document.createElement('div');
     alertMessage.innerText = "Data Updated success";
@@ -70,10 +65,11 @@ export class EditPatientComponent {
       alertMessage.remove();
     }, 3000);
       this.NgZone.run(()=>{
-        this.router.navigateByUrl('/view-patient')
+        this.router.navigateByUrl('/view-test')
       })
     },(err)=>{
       console.log(err);
     })
   }
+
 }

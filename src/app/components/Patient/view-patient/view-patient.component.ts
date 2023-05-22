@@ -10,7 +10,7 @@ export class ViewPatientComponent {
   Patients:any=[];
   constructor(private crudAPI:PatientCrudService){}
   page = 1;
-  pageSize = 4;
+  pageSize = 10;
   ngOnInit(): void {
     this.getAll();
   }

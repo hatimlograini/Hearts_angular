@@ -9,7 +9,7 @@ import { Traitement } from '../class/Traitement/traitement';
 })
 export class TraitementCrudService {
 
-  REST_API:string = 'http://127.0.0.1:8000/api/traitements';
+  REST_API:string = 'http://127.0.0.1:8000/api/traitement';
   httpHeaders = new HttpHeaders().set('Content-Type','application/json');
 
   constructor(private httpClient : HttpClient) { }

@@ -1,5 +1,7 @@
+import { DiagnosticCrudService } from './../services/Diagnostic/diagnostic-crud.service';
 import { Component, OnInit } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
+import { PatientCrudService } from '../services/Patient/patient-crud.service';
 
 @Component({
   selector: 'app-mychart',
@@ -7,12 +9,22 @@ import { Chart, registerables } from 'chart.js';
   styleUrls: ['./mychart.component.css']
 })
 export class MychartComponent implements OnInit{
-  
-  constructor() {
+  diag:any=[];
+  pat:any=[];
+  constructor(private diagser:DiagnosticCrudService , private patser:PatientCrudService) {
     Chart.register(...registerables);
   }
   ngOnInit(): void {
+      this.diagser.getdiagnostics().subscribe(res=>{
+
+      this.diag = res;
+    })
+    this.patser.getpatients().subscribe(res=>{
+
+      this.pat = res;
+    })
     this.RenderChart();
+
   }
 
   RenderChart() {
@@ -22,10 +34,10 @@ export class MychartComponent implements OnInit{
       new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+          labels: this.pat,
           datasets: [{
             label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            data: this.diag,
             borderWidth: 1
           }]
         },

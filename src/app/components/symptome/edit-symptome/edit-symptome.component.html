@@ -14,7 +14,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0">Edit Patient</h1>
+              <h1 class="m-0">Edit Test</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
@@ -54,28 +54,8 @@
                 <form [formGroup]="updateForm" (ngSubmit)="onUpdate()">
 
                   <div class="form-group">
-                    <label for="inputAge">Age</label>
-                    <input type="text" id="inputAge" class="form-control"  formControlName="Age">
-                  </div>
-                  <div class="form-group">
-                    <label for="inputSex">Sex</label>
-                    <input type="text" id="inputSex" class="form-control"  formControlName="Sex">
-                  </div>
-                  <div class="form-group">
-                    <label for="inputRestBloodPress">Rest Blood Pressure</label>
-                    <input type="text" id="inputRestBloodPress" class="form-control"  formControlName="RestBloodPress" >
-                  </div>
-                  <div class="form-group">
-                    <label for="inputCholesterol">Cholesterol</label>
-                    <input type="text" id="inputCholesterol" class="form-control"  formControlName="Cholesterol">
-                  </div>
-                  <div class="form-group">
-                    <label for="inputFastBloodSugar">Fast Blood Sugar</label>
-                    <input type="text" id="inputFastBloodSugar" class="form-control"  formControlName="FastBloodSugar">
-                  </div>
-                  <div class="form-group">
-                    <label for="inputRestElecardioRes">Rest Elecardio Res</label>
-                    <input type="text" id="inputRestElecardioRes" class="form-control"  formControlName="RestElecardioRes" >
+                    <label for="inputChestPainType">ChestPain Type</label>
+                    <input type="text" id="inputChestPainType" class="form-control"  formControlName="ChestPainType">
                   </div>
                   <button type="submit" class="btn btn-block bg-gradient-primary">update</button>
                 </form>

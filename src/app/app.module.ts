@@ -17,6 +17,18 @@ import { AddPatientComponent } from './components/Patient/add-patient/add-patien
 import { ViewPatientComponent } from './components/Patient/view-patient/view-patient.component';
 import { EditPatientComponent } from './components/Patient/edit-patient/edit-patient.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ViewSymptomeComponent } from './components/symptome/view-symptome/view-symptome.component';
+import { AddSymptomeComponent } from './components/symptome/add-symptome/add-symptome.component';
+import { EditSymptomeComponent } from './components/symptome/edit-symptome/edit-symptome.component';
+import { ViewTestComponent } from './components/test/view-test/view-test.component';
+import { AddTestComponent } from './components/test/add-test/add-test.component';
+import { EditTestComponent } from './components/test/edit-test/edit-test.component';
+import { ViewTraitementComponent } from './components/traitement/view-traitement/view-traitement.component';
+import { ViewDiagnosticComponent } from './components/diagnostic/view-diagnostic/view-diagnostic.component';
+import { AddDiagnosticComponent } from './components/diagnostic/add-diagnostic/add-diagnostic.component';
+import { EditDiagnosticComponent } from './components/diagnostic/edit-diagnostic/edit-diagnostic.component';
+import { AddTraitementComponent } from './components/traitement/add-traitement/add-traitement.component';
+import { EditTraitementComponent } from './components/traitement/edit-traitement/edit-traitement.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +43,19 @@ import { NgxPaginationModule } from 'ngx-pagination';
     NavBarComponent,
     AddPatientComponent,
     ViewPatientComponent,
-    EditPatientComponent
+    EditPatientComponent,
+    ViewSymptomeComponent,
+    AddSymptomeComponent,
+    EditSymptomeComponent,
+    ViewTestComponent,
+    AddTestComponent,
+    EditTestComponent,
+    ViewTraitementComponent,
+    ViewDiagnosticComponent,
+    AddDiagnosticComponent,
+    EditDiagnosticComponent,
+    AddTraitementComponent,
+    EditTraitementComponent,
   ],
   imports: [
     BrowserModule,

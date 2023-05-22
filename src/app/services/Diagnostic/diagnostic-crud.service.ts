@@ -7,6 +7,7 @@ import { Diagnostic } from '../class/Diagnostic/diagnostic';
 @Injectable({
   providedIn: 'root'
 })
+
 export class DiagnosticCrudService {
 
   REST_API:string = 'http://127.0.0.1:8000/api/diagnostic';

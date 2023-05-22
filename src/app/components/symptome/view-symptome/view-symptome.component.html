@@ -14,12 +14,12 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0">Patient</h1>
+              <h1 class="m-0">Test</h1>
             </div>
             <!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="add-patient">add new</a></li>
+                <li class="breadcrumb-item"><a href="add-symptome">add new</a></li>
               </ol>
             </div>
             <!-- /.col -->
@@ -42,7 +42,7 @@
           <!-- Main row -->
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Patient_dim</h3>
+              <h3 class="card-title">Symptome</h3>
               <div class="card-tools">
                 <button
                   type="button"
@@ -67,32 +67,22 @@
                 <thead>
                   <tr>
 
-                    <th style="width: 8%">Patient ID</th>
-                    <th style="width: 8%">Age</th>
-                    <th style="width: 8%">Sex</th>
-                    <th style="width: 15%">Rest Blood Pressure</th>
-                    <th style="width: 12%">Cholesterol</th>
-                    <th style="width: 12%">Fast Blood Sugar</th>
-                    <th style="width: 15%">Rest Elecardio Res</th>
+                    <th style="width: 8%">Symptome</th>
+                    <th style="width: 8%">Chest Pain Type</th>
                     <th style="width: 20%"></th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let patient of Patients| paginate: { itemsPerPage: pageSize, currentPage: page }; let i = index">
+                  <tr *ngFor="let symptome of Symptomes| paginate: { itemsPerPage: pageSize, currentPage: page }; let i = index">
 
-                    <td>{{ patient.Patient_ID }}</td>
-                    <td>{{ patient.Age }}</td>
-                    <td>{{ patient.Sex }}</td>
-                    <td>{{ patient.RestBloodPress }}</td>
-                    <td>{{ patient.Cholesterol }}</td>
-                    <td>{{ patient.FastBloodSugar }}</td>
-                    <td>{{ patient.RestElecardioRes }}</td>
+                    <td>{{ symptome.Symptomes_ID }}</td>
+                    <td>{{ symptome.ChestPainType }}</td>
                     <td class="project-actions text-right">
 
-                      <a class="btn btn-info btn-sm" href="/edit-patient/{{patient.Patient_ID}}">
+                      <a class="btn btn-info btn-sm" href="/edit-symptome/{{symptome.Symptomes_ID}}">
                         <i class="fas fa-pencil-alt"></i> Edit
                       </a>
-                      <a class="btn btn-danger btn-sm" (click)="delete(patient.Patient_ID, 1)">
+                      <a class="btn btn-danger btn-sm" (click)="delete(symptome.Symptomes_ID, 1)">
                         <i class="fas fa-trash"></i> Delete
                       </a>
                     </td>
