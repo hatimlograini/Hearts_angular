@@ -10,7 +10,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-
+  errorMessage!:string;
 
   constructor(private router:Router,private auth:AuthenticationService) {
   }
@@ -28,6 +28,7 @@ export class LoginComponent {
 
     },err=>{
       console.log(err);
+      this.errorMessage = "invalid credentials"
     });
   }
 }
